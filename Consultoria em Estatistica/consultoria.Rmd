@@ -1,601 +1,121 @@
 ---
-title: "Introdução a Consultoria Estatística"
+title: "Asessoria em Estatística: Como funciona?"
 author: |
-  | Guilherme P. da Silva & 
-  | Vinícius Menarin
+  | [Guilherme Parreira da Silva](http://lattes.cnpq.br/7353800201695627) & 
+  | [Vinícius Menarin](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4685238D3)
 date: |
   | Apresentação para disciplina de Pesquisa de Reproduzível
   | Universidade Federal do Paraná
   | Curitiba, 20 de Março de 2018
-  
 output: 
-  beamer_presentation: 
+  beamer_presentation:
+    incremental: TRUE
     toc: false
     slide_level: 2
     fig_height: 5
     fig_width: 5
+urlcolor: blue
 bibliography: /home/guilherme/Google Drive/Analises/Modelo/referencias.bib
 csl: /home/guilherme/Google Drive/Analises/Modelo/stilo_biblio.csl
 header-includes:
+# Alfabeto Português
 - \usepackage[alf]{abntex2cite}
 - \usepackage[brazil]{babel}
 - \usepackage[utf8]{inputenc}	
-- \usepackage{rotating}
-- \usepackage{subfigure}
+# Figuras
 - \usepackage{graphicx}
 - \usepackage{float}
+- \usepackage{rotating}
+- \usepackage{subfigure}
 - \usepackage{booktabs}
 - \usepackage{tabulary}
-
+# Colocar cor nos links
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 ---
 
 ```{r, include = FALSE}
 library(knitr)
 opts_chunk$set(
-#    tidy = FALSE, 
-#    results = "markup", # hold
 #    fig.path = "graphs/",
     dpi = 100,
 #    fig.align = "center",
 #    fig.show = "asis", # hold
-#    comment = NA,
-#    warning = FALSE,
-    cache = TRUE
-#    echo = FALSE
-    #fig.width = 10,
-    #fig.height = 7.5
-    )
+    cache = TRUE)
 ```
 
-## Sumário
-
-\tableofcontents
-
-# Introdução
-
-## Ilustração de uma Linha de Produção
-
-$$\includegraphics[scale=0.45, keepaspectratio]{linhadeproducao.jpg}$$
-\tiny{Fonte:}
-@chaplin1936tempos
-
-## Exemplo de Fluxo para Realizar o Monitoramento de uma Linha de Produção
-
-- Escolher um dado delineamento amostral
-    - Amostragem Aleatória Simples
-    - Delineamentos amostrais baseados em conjuntos ordenados
-        - Amostragem por Conjuntos Ordenados (ACO)
-        - Unified Ranked Set Sampling (_URSS_)
-- Obter a (as) amostra(s)
-- Ordenar as amostras selecionadas
-    - Julgamento pessoal
-    - Variável Concomitante
-- Controle Estatístico de Processos (CEP)
-    - Gráficos de controle
-    - Comprimento Médio de Sequência
-
-## Objetivos
-### Objetivo Geral
-Analisar o desempenho do delineamento _URSS_ no contexto do CEP para a
-construção de gráficos de controle para a média, por meio de um estudo de simulação.
-
-## Objetivos
-### Objetivos Específicos
-
-- Comparar o desempenho do _URSS_ quanto ao CMS de gráficos de controle para a
-média em relação à AAS e a outros delineamentos baseados em ranqueamento de
-amostras.
-- Verificar o efeito do tamanho amostral e da eficácia do critério de ordenação nos
-diferentes graus de descontrole da média do processo para cartas de controle obtidas
-via _URSS_;
-- Aplicação do _URSS_ em dados reais;
-- Propor um estimador da variância do estimador da média via _URSS_ e estudar seu
-viés relativo via simulação;
-- Avaliar a aplicabilidade do _URSS_ como alternativa a outros delineamentos no
-contexto do CEP;
-
-# Delineamentos Amostrais Baseados em Conjuntos Ordenados
-
-## Amostragem por Conjuntos Ordenados (ACO)
-
-- Proposto por: @mcintyre
-
-- McIntyre constatou que a ACO é um método mais eficiente que à AAS quando as unidades amostrais são de difícil acesso ou de cara mensuração, sendo possível ordenar as unidades amostrais por julgamento pessoal ou algum outro procedimento de baixo custo, sem de fato mensurar a variável de interesse.
-\newline
-$$\includegraphics*[scale = 0.4, keepaspectratio]{aco5.png}$$
-\tiny{Fonte: Os autores}
-
-## _Median Ranked Set Sampling (MRSS)_
-
-- @muttlakmedian propôs o _MRSS_ como uma alternativa à ACO, e com o objetivo de propor estimadores mais precisos para a média de distribuições simétricas.
-
-$$\includegraphics[scale=0.4, keepaspectratio]{mrss5.png}$$
-\tiny{Fonte: Os autores}
-
-## _Extreme Ranked Set Sampling (ERSS)_
-
-- Proposto por @samawi com o intuito de reduzir os erros de ordenação;
-
-$$\includegraphics[scale=0.4, keepaspectratio]{erss5.png}$$
-\tiny{Fonte: Os autores}
-
-## Estudo comparativo 
-
-- @muttlakalsabah apresentaram um estudo via simulação comparando os delineamentos amostrais AAS, ACO, _ERSS_ e _MRSS_ no contexto de CEP, considerando diferentes níveis de correlação e alteração na média do processo quanto ao CMS.
-    - Comprovaram que o _MRSS_ supera os demais delineamentos no monitoramento da média de processos com base em gráficos de controle . 
-
-
-## _Double- Ranked  Set Sampling (Doubles)_
-
-- Utilizam-se de $k^{3}$ para obter uma amostra de tamanho k.
-- Dois estágios de ordenação
-
-Delineamentos:
-
->- _Double  Quartile-Ranked Set Sampling_ (_DQRSS_ - @dqrss),
->- _Quartile Double-Ranked Set Sampling_ (_QDRSS_ - @qdrss)
->- _Double Extreme-Ranked Set Sampling_ (_DERSS_ - @derss)
->- _Extreme Double-Ranked Set Sampling_ (_EDRSS_ - @edrss)
-
-## _Double- Ranked  Set Sampling (Doubles)_
-
-- @improved realizaram um estudo via simulação para comparar o desempenho dos $DERSS$, $DQRSS$, $QDRSS$ e $EDRSS$ em relação à AAS, ACO e $ERSS$, também no contexto de CEP, e constataram menor CMS na detecção de alteração na média do processo, por meio de gráficos de controle.
-
-## _Unified Ranked Set Sampling (URSS)_
-
-- Proposto por: @zamanzade
- 
-- _URSS_ é uma alteração no delineamento original da ACO, que consiste na ordenação das $k^2$ unidades amostrais em um único conjunto, ao invés de _k_ conjuntos de _k_ unidades.
-
-- Seleção de amostras:
-
-Seleciona-se a ${[(i-1)k+l]}$-ésima unidade amostral para mensuração da variável de interesse, para _i_ variando de $1, ..., k$. Se _k_ é ímpar, $l=\frac{k+1}{2}$; se ambos _k_ e _i_ são pares, então $l=\frac{k}{2}$; mas se _k_ é par e _i_ é ímpar, então $l=\frac{k+2}{2}$. 
-
-
-## _Unified Ranked Set Sampling (URSS)_
-### Ilustração de Seleção de Amostras via _URSS_ para k = 3
-
-
-1º Passo: 
-$\vspace{-1cm}$
-\begin{gather*}
-(X_1, Y_1), (X_2, Y_2),(X_3, Y_3),(X_4, Y_4),(X_5, Y_5),
-\\ (X_6, Y_6),(X_7, Y_7),(X_8, Y_8),(X_9, Y_9).
-\end{gather*}
-
-2º Passo: 
-$\vspace{-1cm}$ 
-\begin{gather*}
-(X_{(1)}, Y_{[1]} ),(X_{(2)}, Y_{[2]} ),(X_{(3)}, Y_{[3]} ),(X_{(4)}, Y_{[4]} ), (X_{(5)}, Y_{[5]} ),
-\\(X_{(6)}, Y_{[6]} ),(X_{(7)}, Y_{[7]} ),(X_{(8)}, Y_{[8]} ),(X_{(9)}, Y_{[9]}),
-\end{gather*}
-
-3º Passo:
-$\vspace{-1cm}$
-\begin{gather*}
-(X_{(1)}, Y_{[1]} ),\boxed{(X_{(2)}, Y_{[2]})},(X_{(3)}, Y_{[3]} ),(X_{(4)}, Y_{[4]} ),\boxed{(X_{(5)}, Y_{[5]})},
-\\(X_{(6)}, Y_{[6]} ),(X_{(7)}, Y_{[7]} ), \boxed{(X_{(8)}, Y_{[8]})},(X_{(9)}, Y_{[9]}).
-\end{gather*}
-
-## Amostras Selecionadas - _Unified Ranked Set Sampling (URSS)_
-
-\begin{table}[h!]
-\centering
-\caption{ Representação das posições das unidades amostrais via \emph{URSS}, a serem selecionadas de uma amostra de tamanho $k^{2}$, após ordenação.}
-\vspace{-0.8em}
-\centering
-\begin{tabular}{l l c}
-\hline
-k & ${k}^{2}$      & Posições das unidades amostrais selecionadas \\
-\hline
-3 & 9                   & 2, 5 e 8                                     \\
-4 & 16                  & 3, 6, 11 e 14                                \\
-5 & 25                  & 3, 8, 13, 18 e 23                            \\
-6 & 36                  & 4, 9, 16, 21, 28 e 33                        \\
-\hline
-\\
-\end{tabular}
-\vspace{-1em}
-\end{table}
-\tiny{Fonte: Os autores}
-
-## _Unified Ranked Set Sampling (URSS)_
-
-O estimador da média populacional via _URSS_ é não viesado se a ordenação for perfeita e se a distribuição da variável de interesse for simétrica, sendo definido por:
-
-\begin{center}
-\scriptsize
-\begin{equation*}
-\bar{Y}_{URSS}=\frac{1}{nk}\sum_{j=1}^{n}\sum_{i=1}^{k}Y_{[(i-1)k+l]j}
-\end{equation*}
-\end{center}
-
-A variância de $\bar{Y}_{URSS}$ é dada por:
-
-\begin{center}
-\scriptsize
-\begin{equation*}
-Var(\bar{Y}_{URSS})=\frac{1}{nk^{2}}\sum_{j=1}^{n}\sum_{i=1}^{k}Var(Y_{[(i-1)k+l]j})+\frac{2}{nk^{2}}\sum_{j=1}^{n}\sum_{i<i'}^{k}Cov(Y_{[(i-1)k+l]j},Y_{[(i'-1)k+l]j}),
-\end{equation*}
-\end{center}
-
-
-# Controle Estatístico de Processos
-
-## Controle Estatístico de Processos
-
->- Garantir a qualidade do produto final. \newline($\uparrow$ Qualidade $\downarrow$ Variabilidade)\newline
-
->- Variabilidade de um processo
-    - Causas Aleatórias
-    - Causas Atribuíveis
-
->- Processo sob controle
-
->- Monitoramento do processo
-    - Gráficos de Controle
-        - CMS
-
-## Gráficos de Controle para a Média do Processo
-
-Proposto por @shewhart, a forma geral para a construção de gráficos de controle:
-
-\begin{equation*}
-LIC = \mu_{0} - A\sqrt{Var(\bar{Y}_{AAS})} = \mu_{0} -A\frac{\sigma_{0_{\bar{Y}_{AAS}}}}{\sqrt{k}}
-\end{equation*}
-
-\begin{equation*}
-LC = \mu_{0}
-\end{equation*}
-
-\begin{equation*}
-LSC = \mu_{0} + A\sqrt{Var(\bar{Y}_{AAS})} = \mu_{0} +A\frac{\sigma_{0_{\bar{Y}_{AAS}}}}{\sqrt{k}}
-\end{equation*}
-
-- Úteis para identificar alteração na média do processo
-
-## Exemplos de Gráficos de Controle 
-### Processo Operando sob Controle
-
-$$ \includegraphics*[width = 9cm, keepaspectratio]{delta0exemplo.png}  $$
-\tiny{Fonte: Os autores}
-
-## Exemplos de Gráficos de Controle 
-### Processo sob Descontrole
-
-$$ \includegraphics*[width = 9cm, keepaspectratio]{fcexemplo.png}  $$
-\tiny{Fonte: Os autores}
-
-## Comprimento Médio da Sequência (CMS)
-
-Segundo @montgomery, o CMS é o número necessários de amostras, em média, para que um ponto caia fora de controle. Caso as observações sejam não correlacionadas, o CMS fica expresso por:
-
-$$CMS = \frac{1}{Probabilidade(\text{um ponto que exceda os limites de controle})}.$$
-
-No caso em que o processo se encontra sob controle, tem-se:
-
-$$CMS_{0} = \frac{1}{\alpha}$$
-
-E sob descontrole:
-
-
-$$ CMS_{1} = \frac{1}{1-\beta(\mu_{1})} $$
-
-# Metodologia do Estudo
-
-## Proposta para a Utilização do _URSS_ para Gráficos de Controle
-
-$$LIC = \mu_{0} - A\sqrt{Var(\bar{Y}_{URSS})} = \mu_{0} - A\sigma_{0_{\bar{Y}_{URSS}}}$$\newline
-$$LC = \mu_{0}$$\newline
-$$LSC = \mu_{0} + A\sqrt{Var(\bar{Y}_{URSS})} = \mu_{0} + A\sigma_{0_{\bar{Y}_{URSS}}}$$
-
-## Estudo Via Simulação do Desempenho dos Gráficos de Controle para a Média Via _URSS_
-### Algoritmo
-
-Passo 1 - Obter os limites de controle
-
-Passo 2 - Simular 1.000.000 de dados com distribuição: 
-
-$$\binom{X}{Y}\sim Normal\left ( \binom{0}{\mu_{Y}} , \begin{pmatrix} 1 & \rho \\ \rho & 1 \end{pmatrix} \right )$$
-
-$$\mu_{Y}=\mu_{0}+\frac{(\delta\sigma_{0})}{\sqrt{k}}$$
-
-$$\delta=|\mu_{Y}-\mu_{0}|\frac{\sqrt{k}}{\sigma_{0}}$$
-
-Passo 3 - Ordenar a variável de interesse Y pelas posições de X
-
-## Estudo Via Simulação do Desempenho dos Gráficos de Controle para a Média Via _URSS_
-### Algoritmo
-
-Passo 4 - Selecionar os k elementos de Y via $URSS$
-
-Passo 5 - Calcular a média de cada amostra (representa um ponto no gráfico de controle)
-
-Passo 6 - Verificar se a média de cada amostra está entre os limites de controle
-
-Passo 7 - Calcular o CMS
-
-$$CMS = \frac{1}{p}, \space \text{  sendo   } \space p = \frac{\text{Número de pontos fora dos limites de controle}}{1.000.000}$$
-
-## Estudo Via Simulação do Desempenho dos Gráficos de Controle para a Média Via _URSS_
-
-- Parâmetros considerados:
-    -	Tamanhos de amostras $(k= 3, 4, 5, 6)$
-    - Níveis de correlação entre a variável de interesse e a variável concomitante $(\rho= 0,25; 0,50; 0,75; 0,9; 1)$;
-    - Níveis de descontrole do processo em relação à média: $(\delta= 0; 0,1; 0,2; 0.3; 0,4; 0,8; 1,2; 1,6; 2; 2,4; 3,2)$.
-
-O CMS para o _MRSS_ foi obtido de forma semelhante a do _URSS_;
-
-O CMS via AAS foi calculado analiticamente com base nas propriedades da distribuição da média amostral;
-
-## Obtenção da Variância do Estimador da Média via _URSS_
-
-- Sob Ordenação Perfeita:
-    - A $Var(\bar{Y}_{URSS})$ foi determinada para amostras de tamanhos k = 3, 4, 5, 6 com base nas propriedades de estatísticas de ordem;
-- Sob Ordenação Imperfeita:
-    - Simula-se 1.000.000 de amostras de uma distribuição normal padrão bivariada;
-    - Ordena-se a variávei de interesse pela concomitante
-    - Seleciona as unidades amostrais correspondentes
-    - Calcula a variância e covariância
-
-## Obtenção da Variância do Estimador da Média via _URSS_
-### Sob Ordenação Imperfeita
-Obter a estatística:
-$\vspace{-1.2cm}$
-\begin{center}
-\scriptsize
-\begin{equation*}
-Var(\bar{Y}_{URSS})=\frac{1}{nk^{2}}\sum_{j=1}^{n}\sum_{i=1}^{k}Var(Y_{[(i-1)k+l]j})+\frac{2}{nk^{2}}\sum_{j=1}^{n}\sum_{i<i'}^{k}Cov(Y_{[(i-1)k+l]j},Y_{[(i'-1)k+l]j}),
-\end{equation*}
-\end{center}
-$\vspace{-0.4cm}$
-via
-$\vspace{-0.8cm}$
-\begin{equation*}
-\scriptsize
-\widehat{Var}(Y_{[(i-1)k+l]}) = \frac{\sum_{h=1}^{H}\left (Y_{[(i-1)k+l]}^{h} - \bar{Y}_{[(i-1)k+l]} \right )^{2}}{H-1},
-\end{equation*}
-
-\begin{equation*}
-\scriptsize
-\bar{Y}_{[(i-1)k+l]} = \frac{\sum_{h=1}^{H}Y_{[(i-1)k+l]}^{h}}{H} \text{\space\space\space\space\space e}
-\end{equation*}
-
-$\vspace{-1.5cm}$
-\begin{center}
-\scriptsize
-\begin{equation*}
-\widehat{Cov}(Y_{[(i-1)k+l]},Y_{[(i'-1)k+l]}) = \frac{\sum_{h=1}^{H}(Y_{[(i-1)k+l]}^{h}-\bar{Y}_{[(i-1)k+l]})(Y_{[(i'-1)k+l]}^{h}-\bar{Y}_{[(i'-1)k+l]})}{H-1}
-\end{equation*}
-\end{center}
-
-\small{H = 1.000.000}
-
-
-## Materiais
-
-### Conjunto de Dados
-
-Em estudo realizado por @dados, dados foram coletados com o objetivo de mensurar a resistência do concreto
-
-- 1030 observações e 9 variáveis
-    - Variável de interesse: Resistência do concreto (MPa)
-    - Variável concomitante: Quantidade de cimento (kg)
-- Ensaio experimental de um processo de produção de concreto, segundo @materiais:
-    - Essência: misturar água, areia, pedra e cimento
-    - Despejar o conteúdo em um formato cilíndrico
-    - Deixá-lo em repouso
-    - Processo de cura em tanque umido (3, 7, 28 dias)
-
-## Materiais
-### Representação da mensuração da resistência do concreto
-
-$$ \includegraphics*[width = 8cm, keepaspectratio]{teste_concreto2.jpg}  $$
-\tiny{Fonte: Youtube (2009)}
-
-## Descrição da Aplicação do URSS, ACO e a AAS
-
-- Parâmetros:
-    - Tamanhos de amostra, k = 3 e 5
-    - Níveis de alteração na média do processo, $\delta = 0; 0,8 \text{ e } 1,2$
-    - Delineamentos $URSS$, ACO e AAS
-- Descrição:
-    - 25 amostras de tamanho k utilizadas para calcular os LIC e LSC
-    - 75 amostras para realizar o monitoramento do processo
-    - Somando-se a variável de interesse, uma variável aleatória W (que representa o descontrole):
-    
-$$\text{W} \sim N(\frac{\delta\sigma_{0}}{\sqrt{k}}, 2)$$
-    
-
-# Resultados
-
-## Resultados
-
-- Desempenho e Comparação dos Gráficos de Controle entre os Delineamentos Apresentados
-
-- Análise do Viés do Estimador Proposto para a Variância da Média via _URSS_
-
-- Simulação de Aplicação em Dados Reais
-
-## CMS Sob Ordenação Perfeita - k=3
+## Fluxo de trabalho
 
 \begin{figure}
 \centering
-\includegraphics*[width = 10cm, keepaspectratio]{op3.png}
+\includegraphics[width = 10cm, keepaspectratio]{timeline.png}
 \end{figure}
-\tiny{Fonte: Al-Omari e Haq (2012). * Os valores do CMS dos delineamentos AAS, $MRSS$ e $URSS$, foram calculados pelos autores}
 
+## Consultoria ou assesoria
 
-## CMS Sob Ordenação Perfeita - k=3
+- Consultoria:
+    - Apenas indica os problemas e como resolver;
 
-Para k=3, o $URSS$ ganha de todos os delineamentos em todos os cenários, inclusive dos doubles, cujos delineamentos usam $k^{3}$ unidades e dois estágios de ordenação.
+- Assesoria:
+    - Quando de fato tu coloca a mão na massa;
 
-## CMS Sob Ordenação Perfeita - k=4
+## Prospecção de clientes
 
-$$ \includegraphics*[width = 10cm, keepaspectratio]{op4.png}  $$
-\tiny{Fonte: Al-Omari e Haq (2012). * Os valores do CMS dos delineamentos AAS, $MRSS$ e $URSS$, foram calculados pelos autores}
+- Divulgação
+    - Grupos de Pós-Graduação no Facebook
+    - Nas universidades
 
-## CMS Sob Ordenação Perfeita - k=4
+- Processo sob controle
 
-Novamente, os diversos CMS gerados pela $URSS$ foram menores para todos os cenários, contra todos os delineamentos considerados (inclusive os \emph{doubles});
+- Indicação
+    - Indicação de colegas de profissão
+    - Indicação de professores
+    - Indicação pelos próprios clientes
 
-- Suponha que uma amostra seja retirada da produção para realizar o monitoramento da média do processo a cada 1 hora. Tomando-se como exemplo a Tabela com $k=4$ e $\delta= 1, 2$, levaria, em média, 28 horas para detectar uma alteração na média do processo caso o delineamento escolhido fosse a AAS (pois CMS = 27,82), enquanto que levaria 6 horas em média via MRSS, e 4 horas via _URSS_.
+- Network/Rede de Contatos
 
+## Entendimento do problema
 
-## CMS Sob Ordenação Perfeita - k=5
+- Reunião:
+    - Presencial;
+    - Skype;
+    - Telefone;
+    - E-mail;
+    
+## Recebimento dos dados
 
-$$ \includegraphics*[width = 10cm, keepaspectratio]{op5.png}  $$
-\tiny{Fonte: Al-Omari e Haq (2012). * Os valores do CMS dos delineamentos AAS, $MRSS$ e $URSS$, foram calculados pelos autores}
+- Maioria dos dados vêm desformatados:
+    - Quem deve arrumar?
+    
+## Empresa
+    
+- CNPJ:
+    - [Empresa LTDA](http://www.conre3.org.br/portal/consultoria-estatistica/):
+        - Despesas Variáveis: 15% a 32% de IR;
+        - Despesas Fixas: Contador + INSS ; Demais Tarifas;
+    - [MEI](http://www.portaldoempreendedor.gov.br/)*:
+        - R$50 mensais
 
-## CMS Sob Ordenação Perfeita - k=5
-- Ainda, observa-se um melhor desempenho do $URSS$ em relação a todos os outros delineamentos em 60 dos 80 cenários
+- Sem CNPJ: 
+     - Pode atender apenas "CPF" (pesquisadores);
+     - Recibo de Pagamento Autônomo (RPA):
+        - Empresa deve recolher ao INSS (20%), ou seja, 20% do valor da análise;
+        
+- Criação de Contrato
+    
+## Orçamento
 
-- Para $\delta = 0,3$ o URSS chegou a detectar um possível descontrole do processo com 48 unidades amostrais, em média, a menos que a ACO.
+- O Que levar em conta no momento de um orçamento:
 
-## CMS sob Ordenação Perfeita
-- Para $\delta= 0,8$, os CMS’s produzidos via _URSS_ foram iguais a 21,25, 13,89 e 9,5 para k = 3, 4 e 5 respectivamente.
-
-- No geral, o $URSS$ se mostrou mais eficiente em 220 dos 240 (91,67%) cenários em relação a todos os delineamentos apresentados
-
-- Ao compará-lo especificamente com a AAS, o $URSS$ foi mais eficiente em todos os cenários estudados.
-
-## CMS Sob Ordenação Imperfeita - k = 5
-
-\[ \includegraphics*[width = 10cm, keepaspectratio]{oi5.png}  \]
-\tiny{Fonte: Muttlak e Al-Sabah (2010). * Os valores do CMS dos delineamentos AAS, $MRSS$ e $URSS$, foram calculados pelos autores}
-
-## CMS Sob Ordenação Imperfeita - k = 5
-
-- Os delineamentos ACO e $URSS$ ganham praticamente em todos os cenários da AAS
-
-- Ganhou em 42 dos 50 cenários
-
-## CMS Sob Ordenação Imperfeita - k = 6
-
-\[ \includegraphics*[width = 10cm, keepaspectratio]{oi6.png}  \]
-\tiny{Fonte: Muttlak e Al-Sabah (2010). * Os valores do CMS dos delineamentos AAS, $MRSS$ e $URSS$, foram calculados pelos autores}
-
-## CMS Sob Ordenação Imperfeita - k = 6
-- Para todos dos cenários considerados, a ACO e o $URSS$ foram mais eficientes que a AAS
-- Em 48 dos 50 cenários sob descontrole, os valores do CMS produzidos via $URSS$ foram menores que os CMS's obtidos via ACO
-
-## CMS Sob Ordenação Imperfeita
-
->- O _URSS_ ganhou em eficiência 197 dos 200 cenários em relação a AAS para o processo sob descontrole.
-$\vspace{1cm}$
->- O _URSS_ foi mais eficiente em relação à ACO em __179 dos 200 cenários__ para o processo sob descontrole. 
-    - Ainda quando os valores do CMS eram maiores que o da ACO, observou-se que esses valores eram bem próximos, nenhuma diferença discrepante.
-$\vspace{1cm}$
->- Comparando os resultados via _URSS_ obtidos com os valores do CMS produzidos via ACO, _MRSS e ERSS_ em @muttlakalsabah, o _URSS_ foi mais eficiente em 167 de 200 cenários
-
-
-## CMS Sob Ordenação Imperfeita
->- Quanto maior o tamanho de amostra (k), menor o CMS para os delineamentos baseados com conjuntos ordenados para dado valor de $\delta \ge 0.1$ e $\rho$.
-
->- Quanto maior o valor de $\rho$, maior a eficácia do processo de ordenação, menor o CMS.
-
-## Análise do Viés do Estimador Proposto
-
-- O viés relativo do estimador proposto para a variância da média, foi inferior a 0,01 (em 2 dos 8 valores de B, inferior a 0,001) para todos os valores de B considerados, produzindo indicativo de baixo viés associado ao estimador. 
-$\vspace{1.5cm}$
-- Para cenários mais favoráveis, resultantes de maiores valores para b, k e $\rho$, espera-se que o viés relativo seja ainda menor.
-
-## Simulação da Aplicação em Dados Reais
-
-\begin{table}[H]
-\caption{Medidas resumo para as variáveis quantidade de cimento e resistência do concreto} 
-\vspace{-1.7em}
-\begin{center}
-\scriptsize
-\begin{tabular}{lcc}
-\toprule
-\multicolumn{1}{l}{Medidas descritivas}&\multicolumn{1}{c}{Quantidade de cimento (Kg)}&\multicolumn{1}{c}{Resistência do concreto (MPa)}\tabularnewline
-\midrule
-Mínimo&$102,0$&$ 2,3$\tabularnewline
-Média&$281,2$&$35,8$\tabularnewline
-Mediana&$272,9$&$34,5$\tabularnewline
-Máximo&$540,0$&$82,6$\tabularnewline
-Desvio padrão&$104,5$&$16,7$\tabularnewline
-Coef. de Correlação& \multicolumn{2}{c}{0,50}\tabularnewline
-\bottomrule
-\end{tabular}\end{center}
-\vspace{-1em}
-\end{table}
-
-\tiny{Fonte: Os autores}
-
-## Simulação da Aplicação em Dados Reais
-### Comportamento e distribuição da variável Resistência do Concreto
-
-$$ \includegraphics*[width = 10cm, keepaspectratio]{histEcorr.png}  $$
-\tiny{Fonte: Os autores}
-
-
-## Gráficos de Controle
-
-
-$$ \includegraphics*[height = 7.5cm, keepaspectratio]{3k3delta0.png}  $$
-\tiny{Fonte: Os autores}
-
-## Gráficos de Controle 
-
-$$ \includegraphics*[height = 7.5cm, keepaspectratio]{3k3delta8.png}  $$
-\tiny{Fonte: Os autores}
-
-## Gráficos de Controle 
-
-$$ \includegraphics*[height = 7.5cm, keepaspectratio]{3k3delta12.png}  $$
-\tiny{Fonte: Os autores}
-
-
-# Conclusão
-
-## CMS
-
-O __ganho em eficiência do URSS__, em termos de um menor CMS, para processos operando fora de controle foi de :
-
-- __190 dos 210 (90,48%)__ cenários considerados sob __ordenação perfeita__, em relação
-aos delineamentos amostrais __ACO, ERSS, MRSS, EDRSS, DERSS, QDRSS__ e __DQRSS__;
-
-- __167 dos 200 (83,5)%__ dos cenários sob __ordenação imperfeita__ em relação aos delineamentos
-ACO, _ERSS e MRSS_;
-
-- Praticamente em __todos os cenários__ em relação à AAS.
-
-Quanto maior o tamanho de amostra (k), menor o CMS, para dado valor de $\delta$ e $\rho$ para os delineamentos baseados em conjuntos ordenados.
-
-Quanto maior o valor de $\rho$, menor o erro de ordenação, maior o ganho em precisão.
-
-## Simulação da Aplicação em Dados Reais
-
-- O _URSS_ foi superior em 5 dos 6 cenários do processo operando sob descontrole (ACO, AAS, $\delta=0,8;1,2$);
-- Taxa de falsos alarmes se comportou conforme o esperado;
-- Vicío desprezível para o estimador proposto da $Var(\bar{Y}_{URSS})$.
-
-## Facilidade da Aplicação
-
-Sugere-se nessa ordem a utilização dos delineamentos quanto à facilidade de aplicação:
-
-> - _ERSS_
-> - _ACO_
-> - _MRSS_
-> - _URSS_
-> - _Doubles_
-
-## Considerações Finais
-
->- Sugere-se o _URSS_ como o delineamento a ser utilizado para o monitoramento do processo
-via gráfico de controle para a média, dado o seu ganho em eficiência em relação aos
-demais delineamentos baseados em conjuntos ordenados e a AAS.
-
->- O melhor delineamento ("ótimo") é aquele que leva em consideração os seguintes aspectos:
-    - Eficiência
-    - Tempo de execução
-    - Custo
-    - Aplicabilidade
-    - Dentre outros
-
->- Ainda, fica a cargo do responsável da execução de dada tarefa, a escolha pelo delineamento que ele o julga ser o mais adequado
+```{r, echo=FALSE, fig.width=8}
+lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação")
+df <- data.frame(`Acoes` = lista,
+           freq = rep(1, length(lista))
+           )
+wordcloud::wordcloud(df$Acoes, df$freq,
+                     random.color = T,
+                     colors = colors(T)[sample(length(colors(T)),length(lista))],
+                     scale = c(2,0.5))
+```
 
 ## Referências {.allowframebreaks}
-
