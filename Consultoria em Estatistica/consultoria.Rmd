@@ -1,10 +1,10 @@
 ---
-title: "Asessoria em Estatística: Como funciona?"
+title: "Assessoria em Estatística: Como funciona?"
 author: |
   | [Guilherme Parreira da Silva](http://lattes.cnpq.br/7353800201695627) & 
   | [Vinícius Menarin](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4685238D3)
 date: |
-  | Apresentação para disciplina de Pesquisa de Reproduzível
+  | Apresentação para disciplina de Pesquisa Reproduzível
   | Universidade Federal do Paraná
   | Curitiba, 20 de Março de 2018
 output: 
@@ -44,19 +44,37 @@ opts_chunk$set(
     cache = TRUE)
 ```
 
-## Fluxo de trabalho
+## Apresentação - Guilherme
+
+- [GP Soluções em Estatística](http://facebook.com/gpsolucoesemestatistica):
+\begin{figure}
+\centering
+\href{http://facebook.com/gpsolucoesemestatistica}{\includegraphics[width = 3cm, keepaspectratio]{logocompletacomfundo.png}}
+\end{figure}
+
+- ~ 100 análises:
+
+    - [Painel Pesquisas](http://www.painelpesquisas.com.br/);
+    - [DuPont Brasil](http://www.dupont.com.br/);
+    - [Impextraco Brasil](https://www.impextraco.com/pt);
+
+## Apresentação - Vinícius:
+
+~ 10 análises
+
+## Fluxo de trabalho da assessoria
 
 \begin{figure}
 \centering
 \includegraphics[width = 10cm, keepaspectratio]{timeline.png}
 \end{figure}
 
-## Consultoria ou assesoria
+## Consultoria ou assessoria
 
 - Consultoria:
     - Apenas indica os problemas e como resolver;
 
-- Assesoria:
+- Assessoria:
     - Quando de fato tu coloca a mão na massa;
 
 ## Prospecção de clientes
@@ -65,12 +83,15 @@ opts_chunk$set(
     - Grupos de Pós-Graduação no Facebook
     - Nas universidades
 
-- Processo sob controle
-
+- "Fonte" de clientes:
+    - [Estatística Brasil](https://www.facebook.com/groups/estatistica.brasil/);
+    - [Oportunidade de Trabalho para Estatísticos](https://www.facebook.com/groups/statjobs/);
+    - [United Statisticians](https://unitedstatisticians.com/)
+    
 - Indicação
-    - Indicação de colegas de profissão
-    - Indicação de professores
-    - Indicação pelos próprios clientes
+    - De colegas de profissão
+    - De professores
+    - Próprios clientes
 
 - Network/Rede de Contatos
 
@@ -93,8 +114,8 @@ opts_chunk$set(
     - [Empresa LTDA](http://www.conre3.org.br/portal/consultoria-estatistica/):
         - Despesas Variáveis: 15% a 32% de IR;
         - Despesas Fixas: Contador + INSS ; Demais Tarifas;
-    - [MEI](http://www.portaldoempreendedor.gov.br/)*:
-        - R$50 mensais
+    - [MEI](http://www.portaldoempreendedor.gov.br/):
+        - 50 reais mensais
 
 - Sem CNPJ: 
      - Pode atender apenas "CPF" (pesquisadores);
@@ -107,15 +128,73 @@ opts_chunk$set(
 
 - O Que levar em conta no momento de um orçamento:
 
-```{r, echo=FALSE, fig.width=8}
-lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação")
+```{r, echo=FALSE, fig.width=4, fig.align='center'}
+lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação","Experiência")
 df <- data.frame(`Acoes` = lista,
            freq = rep(1, length(lista))
            )
+set.seed(3123132)
 wordcloud::wordcloud(df$Acoes, df$freq,
                      random.color = T,
                      colors = colors(T)[sample(length(colors(T)),length(lista))],
-                     scale = c(2,0.5))
+                     scale = c(1.5,0.5))
 ```
+
+## Orçamento - Precificação
+
+- Cálculo de Tamanho Amostral;
+- Preço por hora;
+- Exemplos de Análises.
+
+## Análises mais Comuns
+
+- Análise Descritiva
+- Testes bivariados
+- Modelos de regressão;
+- Multivariada
+
+## Relatório
+
+- Essencial:
+    - PDF
+    - HTML
+    - Word
+    
+- Devo liberar o código?
+
+## Pós-"Venda"
+
+Deixar claro no orçamento o que está incluso na pós-análise.
+
+- Sugestões do que não cobrar:
+    - Esclarecimento de dúvidas;
+    - Pequenas alterações da análise
+
+- Sugestões do que cobrar:
+    - Novas análises;
+    - Customizações que atendam interesse particular;
+    - Alterações que configurem uma nova análise;
+    - Novos dados (isso pode gerar novas conclusões);
+    - Novas variáveis;
+  
+## Dicas gerais
+
+- Domínios de pacotes R:
+    - Gráficos: `RColorBrewer`, `ggplot2`, `lattice`, `likert`, `wordcloud`;
+    - Manipulação de dados: Família `apply`, `dplyr`;
+    - Dados Longos para largos: `reshape2`, `dplyr`, `regex()`;
+    - Comparações Múltiplas: `lsmeans`, `glht`;
+    - Tamanho amostral: `pwr` e livro @cohen;
+    - Correlação: `PerformanceAnalytics` e `Corrplot`;
+    - Formatação: `kable`, `kableExtra`, `htmlTable`, `broom`;
+    - Modelagem: `lm()`, `glm()`, `multinom`, `lme4`, `Tweedie`, `mgcv`, `mcglm`, `ordinal`, `hnp`;
+    - Importação de base de dados: `openxlsx` (Excel), `data.table` (grandes bases);
+    
+- Atividades na UFPR:
+    - LEA;
+    - Projetos do LEG/PET que envolvam pesquisadores;
+    - Participação de eventos de estatística;
+    
+# Obrigado!
 
 ## Referências {.allowframebreaks}
