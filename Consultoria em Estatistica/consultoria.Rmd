@@ -122,6 +122,11 @@ opts_chunk$set(
      - Recibo de Pagamento Autônomo (RPA):
         - Empresa deve recolher ao INSS (20%), ou seja, 20% do valor da análise;
         
+- Registro Profissional:
+     - Registro Principal (Permite assinar pesquisas);
+     - Registro de Técnico Estudante;
+     - Registro da Empresa;
+        
 - Criação de Contrato
     
 ## Orçamento
