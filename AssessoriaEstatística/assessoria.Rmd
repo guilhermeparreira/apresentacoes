@@ -27,6 +27,7 @@ header-includes:
 - \usepackage{float}
 - \usepackage{rotating}
 - \usepackage{subfigure}
+#- \usepackage{subcaption}
 - \usepackage{booktabs}
 - \usepackage{tabulary}
 # Colocar cor nos links
@@ -60,7 +61,23 @@ opts_chunk$set(
 
 ## Apresentação - Vinícius:
 
-~ 10 análises
+Formação: 
+
+\begin{figure}[H]
+  \centering
+  \subfigure{\includegraphics[scale=0.3, keepaspectratio]{logo_ufpr.png}}
+  \quad  
+  \subfigure{\includegraphics[scale=0.4, keepaspectratio]{logo_esalq.png}}
+  \quad
+\end{figure}
+
+Análises:
+
++ ~ 15 análises nas seguintes áreas:
+    + Saúde;
+    + Agronomia;
+    + Outras; 
+
 
 ## Fluxo de trabalho da assessoria
 
@@ -106,7 +123,15 @@ opts_chunk$set(
 ## Recebimento dos dados
 
 - Maioria dos dados vêm desformatados:
-    - Quem deve arrumar?
+    - campo numérico com mistura de . e , como separadores decimais;
+    - campos de idade com letras e números (Ex. 16 meses);
+    - informações inconsistentes (Ex. Base de crianças com idades superiores de 30 anos);
+    - informações duplicadas;
+
+Quem deve arrumar?
+
+- Valores outliers que nas análises precisam ser confirmadas com o pesquisador;
+    
     
 ## Empresa
     
@@ -134,7 +159,7 @@ opts_chunk$set(
 - O Que levar em conta no momento de um orçamento:
 
 ```{r, echo=FALSE, fig.width=4, fig.align='center'}
-lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação","Experiência")
+lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação","Experiência","Relatório")
 df <- data.frame(`Acoes` = lista,
            freq = rep(1, length(lista))
            )
@@ -142,21 +167,15 @@ set.seed(3123132)
 wordcloud::wordcloud(df$Acoes, df$freq,
                      random.color = T,
                      colors = colors(T)[sample(length(colors(T)),length(lista))],
-                     scale = c(1.5,0.5))
+                     scale = c(1,0.2))
 ```
-
-## Orçamento - Precificação
-
-- Cálculo de Tamanho Amostral;
-- Preço por hora;
-- Exemplos de Análises.
 
 ## Análises mais Comuns
 
-- Análise Descritiva
-- Testes bivariados
+- Análise Descritiva;
+- Testes bivariados (Paramétricos e Não Paramétricos);
 - Modelos de regressão;
-- Multivariada
+- Multivariada;
 
 ## Relatório
 
