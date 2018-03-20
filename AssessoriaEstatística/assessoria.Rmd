@@ -9,7 +9,7 @@ date: |
   | Curitiba, 20 de Março de 2018
 output: 
   beamer_presentation:
-    incremental: TRUE
+    incremental: FALSE
     toc: false
     slide_level: 2
     fig_height: 5
@@ -128,7 +128,7 @@ Análises:
     - informações inconsistentes (Ex. Base de crianças com idades superiores de 30 anos);
     - informações duplicadas;
 
-Quem deve arrumar?
+- Quem deve arrumar?
 
 - Valores outliers que nas análises precisam ser confirmadas com o pesquisador;
     
@@ -215,10 +215,14 @@ Deixar claro no orçamento o que está incluso na pós-análise.
     - Importação de base de dados: `openxlsx` (Excel), `data.table` (grandes bases);
     
 - Atividades na UFPR:
-    - LEA;
+    - LEA/Empresa Júnior;
     - Projetos do LEG/PET que envolvam pesquisadores;
     - Participação de eventos de estatística;
     
+## Link da apresentação
+
+[https://github.com/parre07/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf](https://github.com/parre07/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf);
+
 # Obrigado!
 
 ## Referências {.allowframebreaks}
