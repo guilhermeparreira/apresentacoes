@@ -221,7 +221,7 @@ Deixar claro no orçamento o que está incluso na pós-análise.
     
 ## Link da apresentação
 
-[https://github.com/parre07/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf](https://github.com/parre07/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf);
+[https://github.com/guilhermeparreira/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf](https://github.com/guilhermeparreira/apresentacoes/blob/master/AssessoriaEstat%C3%ADstica/assessoria.pdf);
 
 # Obrigado!
 
