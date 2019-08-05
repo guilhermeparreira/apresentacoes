@@ -68,21 +68,38 @@ opts_chunk$set(
 
 - Mestrando em Métodos Numéricos pela UFPR
 
+## Agenda
 
-## Fluxo de trabalho da assessoria
+- Motivação
+- Mercado de Trabalho
+- Estágio;
+- Oportunidades na UFPR
+- Carreira de Professor;
+- Intercâmbio;
+- Assessoria Estatística;
+- Análises;
+- Dicas Gerais
 
-\begin{figure}
-\centering
-\includegraphics[width = 10cm, keepaspectratio]{timeline.png}
-\end{figure}
 
-## Mídias Sociais/Fóruns
+## Motivação
 
-- Páginas interessantes de se acompanhar:
-    - [Estatística Brasil](https://www.facebook.com/groups/estatistica.brasil/);
-    - [Oportunidade de Trabalho para Estatísticos](https://www.facebook.com/groups/statjobs/);
-    - [R Brasil Programadores](https://unitedstatisticians.com/)
-    
+
+
+## Cientista de Dados versus Estatístico
+
+## Trabalho/Estágio ao longo da faculdade
+
+- Estágio de 4h/6h:
+  - Alguns não utilizam tanto a estatística quanto a gente aprende;
+  - Empresas às vezes buscam alguém com o pensamento estatístico apenas (Orientador de Estágio);
+  - Relação de R$ e conhecimento nem sempre é linear;
+  - CIEE-PR;
+  - Site da Própria Empresa;
+  
+- Trabalho de 8h:
+  - Dificuldade em conciliar trabalho e universidade;
+
+- Trabalhar com Modelagem;
 
 ## Oportunidades dentro da UFPR
 
@@ -97,14 +114,57 @@ opts_chunk$set(
 
 - Participação de eventos de estatística;
 
+## Professor
+
+- Cursinho para concurso público;
+- Ensino Técnico;
+- Ensino Superior (Mestrado e Doutorado)
+
+## Mídias Sociais e Eventos
+
+- Páginas interessantes de se acompanhar:
+    - [Estatística Brasil](https://www.facebook.com/groups/estatistica.brasil/);
+    - [Oportunidade de Trabalho para Estatísticos](https://www.facebook.com/groups/statjobs/);
+    - [R Brasil Programadores](https://unitedstatisticians.com/);
+    
+- StackOverflow;
+
+- Kaggle;
+
+- Hackaton:
+  - Blue Hack;
+  - Nasa
+  
+- Eventos:
+  - RBras;
+  - SINAPE;
+  - Escola de Modelos de regressão
+
+## Intercâmbio
+
+- Estudo lá;
+
+- Como era a vida;
+
+- Projeto;
+
+- Relação com os professores
+
 ## Exemplo de análise
 
 - Ovelhas;
+  - Matérias do Curso: 
+
 
 - Tratamento de Casais
+  - Matérias do Curso: Processo Aleatório;
 
-- Processo Aleatório.
+## Assessoria Estatística
 
+\begin{figure}
+\centering
+\includegraphics[width = 10cm, keepaspectratio]{timeline.png}
+\end{figure}
 
 ## Exemplo do pensamento estatístico
 
@@ -123,8 +183,8 @@ Repercussão:
   - Os programas que passam nesse horário das demais emissoras são piores do que aqueles que passavam às 16h?
   - Foi devido ao frio?
   - Aumento foi real?
-  - 
   - Quais outras possíveis **fontes de variação**?
+  - Amostra é de tamanho suficiente?
 
 - Conteúdo da Matéria Planejamento de Experimentos I
 
@@ -137,7 +197,7 @@ Repercussão:
 - Aproveite bem o seu tempo na universidade (maior probabilidade de aprender, no mercado você é muito mais cobrado);
 - Aprenda Inglês;
 - Aprenda a programar;
-- Busque novas tecnologias (ferramentas de análise);
+- Busque novas tecnologias (ferramentas de análise, outras disciplinas da Universidade);
 - Estude junto com amigos (não fique 100% do tempo sozinho);
 - Desenvolva a comunicação e a escrita técnica;
 
