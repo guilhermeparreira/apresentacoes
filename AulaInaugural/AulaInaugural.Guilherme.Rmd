@@ -1,0 +1,215 @@
+---
+title: "Profissão de Estatístico: Desafios e Caminhos"
+author: |
+  | [Guilherme Parreira da Silva](http://lattes.cnpq.br/7353800201695627) & 
+date: |
+  | Aula Inaugural de Estatística 
+  | Universidade Federal do Paraná
+  | Curitiba, 05 de Agosto de 2019
+output: 
+  beamer_presentation:
+    incremental: FALSE
+    toc: false
+    slide_level: 2
+    fig_height: 5
+    fig_width: 5
+urlcolor: blue
+# bibliography: /home/guilherme/Google Drive/Analises/Modelo/referencias.bib
+# csl: /home/guilherme/Google Drive/Analises/Modelo/stilo_biblio.csl
+header-includes:
+# Alfabeto Português
+- \usepackage[alf]{abntex2cite}
+- \usepackage[brazil]{babel}
+- \usepackage[utf8]{inputenc}	
+# Figuras
+- \usepackage{graphicx}
+- \usepackage{float}
+- \usepackage{rotating}
+- \usepackage{subfigure}
+#- \usepackage{subcaption}
+- \usepackage{booktabs}
+- \usepackage{tabulary}
+# Colocar cor nos links
+- \definecolor{links}{HTML}{2A1B81}
+- \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+---
+
+```{r, include = FALSE}
+library(knitr)
+opts_chunk$set(
+#    fig.path = "graphs/",
+    dpi = 100,
+#    fig.align = "center",
+#    fig.show = "asis", # hold
+    cache = TRUE)
+```
+
+## Apresentação - Guilherme
+
+- Iniciou o curso em 2010 - Formado pela UFPR em Estatística em 2015;
+
+- Graduação sanduíche na Austrália;
+
+- Experiência no IPPUC, IBEMA, HSBC/Bradesco;
+
+- Empresa de Assessoria Estatística:
+
+- [GP Soluções em Estatística](http://facebook.com/gpsolucoesemestatistica):
+\begin{figure}
+\centering
+\href{http://facebook.com/gpsolucoesemestatistica}{\includegraphics[width = 3cm, keepaspectratio]{logocompletacomfundo.png}}
+\end{figure}
+
+- ~ 100 análises:
+
+    - [Painel Pesquisas](http://www.painelpesquisas.com.br/);
+    - [DuPont Brasil](http://www.dupont.com.br/);
+    - [Impextraco Brasil](https://www.impextraco.com/pt);
+
+## Fluxo de trabalho da assessoria
+
+\begin{figure}
+\centering
+\includegraphics[width = 10cm, keepaspectratio]{timeline.png}
+\end{figure}
+
+## Consultoria ou assessoria
+
+- Consultoria:
+    - Apenas indica os problemas e como resolver;
+
+- Assessoria:
+    - Quando de fato tu coloca a mão na massa;
+
+## Prospecção de clientes
+
+- Divulgação
+    - Grupos de Pós-Graduação no Facebook
+    - Nas universidades
+
+- "Fonte" de clientes:
+    - [Estatística Brasil](https://www.facebook.com/groups/estatistica.brasil/);
+    - [Oportunidade de Trabalho para Estatísticos](https://www.facebook.com/groups/statjobs/);
+    - [United Statisticians](https://unitedstatisticians.com/)
+    
+- Indicação
+    - De colegas de profissão
+    - De professores
+    - Próprios clientes
+
+- Network/Rede de Contatos
+
+## Entendimento do problema
+
+- Reunião:
+    - Presencial;
+    - Skype;
+    - Telefone;
+    - E-mail;
+    
+## Recebimento dos dados
+
+- Maioria dos dados vêm desformatados:
+    - campo numérico com mistura de . e , como separadores decimais;
+    - campos de idade com letras e números (Ex. 16 meses);
+    - informações inconsistentes (Ex. Base de crianças com idades superiores de 30 anos);
+    - informações duplicadas;
+
+- Quem deve arrumar?
+
+- Valores outliers que nas análises precisam ser confirmadas com o pesquisador;
+    
+    
+## Empresa
+    
+- CNPJ:
+    - [Empresa LTDA](http://www.conre3.org.br/portal/consultoria-estatistica/):
+        - Despesas Variáveis: 15% a 32% de IR;
+        - Despesas Fixas: Contador + INSS ; Demais Tarifas;
+    - [MEI](http://www.portaldoempreendedor.gov.br/):
+        - 50 reais mensais
+
+- Sem CNPJ: 
+     - Pode atender apenas "CPF" (pesquisadores);
+     - Recibo de Pagamento Autônomo (RPA):
+        - Empresa deve recolher ao INSS (20%), ou seja, 20% do valor da análise;
+        
+- Registro Profissional:
+     - Registro Principal (Permite assinar pesquisas);
+     - Registro de Técnico Estudante;
+     - Registro da Empresa;
+        
+- Criação de Contrato
+    
+## Orçamento
+
+- O Que levar em conta no momento de um orçamento:
+
+```{r, echo=FALSE, fig.width=4, fig.align='center'}
+lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação","Experiência","Relatório")
+df <- data.frame(`Acoes` = lista,
+           freq = rep(1, length(lista))
+           )
+set.seed(3123132)
+wordcloud::wordcloud(df$Acoes, df$freq,
+                     random.color = T,
+                     colors = colors(T)[sample(length(colors(T)),length(lista))],
+                     scale = c(1,0.2))
+```
+
+## Análises mais Comuns
+
+- Análise Descritiva;
+- Testes bivariados (Paramétricos e Não Paramétricos);
+- Modelos de regressão;
+- Multivariada;
+
+## Relatório
+
+- Essencial:
+    - PDF
+    - HTML
+    - Word
+    
+- Devo liberar o código?
+
+## Pós-"Venda"
+
+Deixar claro no orçamento o que está incluso na pós-análise.
+
+- Sugestões do que não cobrar:
+    - Esclarecimento de dúvidas;
+    - Pequenas alterações da análise
+
+- Sugestões do que cobrar:
+    - Novas análises;
+    - Customizações que atendam interesse particular;
+    - Alterações que configurem uma nova análise;
+    - Novos dados (isso pode gerar novas conclusões);
+    - Novas variáveis;
+  
+## Dicas gerais
+
+- Domínios de pacotes R:
+    - Gráficos: `RColorBrewer`, `ggplot2`, `lattice`, `likert`, `wordcloud`;
+    - Manipulação de dados: Família `apply`, `dplyr`;
+    - Dados Longos para largos: `reshape2`, `dplyr`, `regex()`;
+    - Comparações Múltiplas: `lsmeans`, `glht`;
+    - Tamanho amostral: `pwr` e livro @cohen;
+    - Correlação: `PerformanceAnalytics` e `Corrplot`;
+    - Formatação: `kable`, `kableExtra`, `htmlTable`, `broom`;
+    - Modelagem: `lm()`, `glm()`, `multinom`, `lme4`, `Tweedie`, `mgcv`, `mcglm`, `ordinal`, `hnp`;
+    - Importação de base de dados: `openxlsx` (Excel), `data.table` (grandes bases);
+    
+- Atividades na UFPR:
+    - LEA/Empresa Júnior;
+    - Projetos do LEG/PET que envolvam pesquisadores;
+    - Participação de eventos de estatística;
+    
+## Link da apresentação
+
+[https://github.com/guilhermeparreira/apresentacoes/tree/master/AulaInaugural/AulaInaugural.Guilherme.pdf](https://github.com/guilhermeparreira/apresentacoes/tree/master/AulaInaugural/AulaInaugural.Guilherme.pdf);
+
+# Obrigado!
+
+## Referências {.allowframebreaks}
