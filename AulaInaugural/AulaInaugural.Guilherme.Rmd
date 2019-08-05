@@ -60,11 +60,14 @@ opts_chunk$set(
 \href{http://facebook.com/gpsolucoesemestatistica}{\includegraphics[width = 3cm, keepaspectratio]{logocompletacomfundo.png}}
 \end{figure}
 
-- ~ 100 análises:
+- + que 200 análises para pesquisadores e empresa:
 
-    - [Painel Pesquisas](http://www.painelpesquisas.com.br/);
-    - [DuPont Brasil](http://www.dupont.com.br/);
-    - [Impextraco Brasil](https://www.impextraco.com/pt);
+    <!-- - [Painel Pesquisas](http://www.painelpesquisas.com.br/); -->
+    <!-- - [DuPont Brasil](http://www.dupont.com.br/); -->
+    <!-- - [Impextraco Brasil](https://www.impextraco.com/pt); -->
+
+- Mestrando em Métodos Numéricos pela UFPR
+
 
 ## Fluxo de trabalho da assessoria
 
@@ -73,123 +76,72 @@ opts_chunk$set(
 \includegraphics[width = 10cm, keepaspectratio]{timeline.png}
 \end{figure}
 
-## Consultoria ou assessoria
+## Mídias Sociais/Fóruns
 
-- Consultoria:
-    - Apenas indica os problemas e como resolver;
-
-- Assessoria:
-    - Quando de fato tu coloca a mão na massa;
-
-## Prospecção de clientes
-
-- Divulgação
-    - Grupos de Pós-Graduação no Facebook
-    - Nas universidades
-
-- "Fonte" de clientes:
+- Páginas interessantes de se acompanhar:
     - [Estatística Brasil](https://www.facebook.com/groups/estatistica.brasil/);
     - [Oportunidade de Trabalho para Estatísticos](https://www.facebook.com/groups/statjobs/);
-    - [United Statisticians](https://unitedstatisticians.com/)
+    - [R Brasil Programadores](https://unitedstatisticians.com/)
     
-- Indicação
-    - De colegas de profissão
-    - De professores
-    - Próprios clientes
 
-- Network/Rede de Contatos
+## Oportunidades dentro da UFPR
 
-## Entendimento do problema
+- LEA;
+- Empresa Júnior;
+- Projetos do LEG;
+- PET;
+- Monitoria;
+- Iniciação Científica;
+- Monitor de Especialização;
+- Trabalho voluntário com professor;
 
-- Reunião:
-    - Presencial;
-    - Skype;
-    - Telefone;
-    - E-mail;
-    
-## Recebimento dos dados
+- Participação de eventos de estatística;
 
-- Maioria dos dados vêm desformatados:
-    - campo numérico com mistura de . e , como separadores decimais;
-    - campos de idade com letras e números (Ex. 16 meses);
-    - informações inconsistentes (Ex. Base de crianças com idades superiores de 30 anos);
-    - informações duplicadas;
+## Exemplo de análise
 
-- Quem deve arrumar?
+- Ovelhas;
 
-- Valores outliers que nas análises precisam ser confirmadas com o pesquisador;
-    
-    
-## Empresa
-    
-- CNPJ:
-    - [Empresa LTDA](http://www.conre3.org.br/portal/consultoria-estatistica/):
-        - Despesas Variáveis: 15% a 32% de IR;
-        - Despesas Fixas: Contador + INSS ; Demais Tarifas;
-    - [MEI](http://www.portaldoempreendedor.gov.br/):
-        - 50 reais mensais
+- Tratamento de Casais
 
-- Sem CNPJ: 
-     - Pode atender apenas "CPF" (pesquisadores);
-     - Recibo de Pagamento Autônomo (RPA):
-        - Empresa deve recolher ao INSS (20%), ou seja, 20% do valor da análise;
-        
-- Registro Profissional:
-     - Registro Principal (Permite assinar pesquisas);
-     - Registro de Técnico Estudante;
-     - Registro da Empresa;
-        
-- Criação de Contrato
-    
-## Orçamento
+- Processo Aleatório.
 
-- O Que levar em conta no momento de um orçamento:
 
-```{r, echo=FALSE, fig.width=4, fig.align='center'}
-lista <- c("Dificuldade","Conhecimento","Propósito","Formação","Localidade","Exigências","Tempo","Salario","Código","Customizações","Base","Análise","Apresentação","Experiência","Relatório")
-df <- data.frame(`Acoes` = lista,
-           freq = rep(1, length(lista))
-           )
-set.seed(3123132)
-wordcloud::wordcloud(df$Acoes, df$freq,
-                     random.color = T,
-                     colors = colors(T)[sample(length(colors(T)),length(lista))],
-                     scale = c(1,0.2))
-```
+## Exemplo do pensamento estatístico
 
-## Análises mais Comuns
+- A rede Globo fez um experimento de alterar o horário do jogo do último domingo das 16h para às 19h;
 
-- Análise Descritiva;
-- Testes bivariados (Paramétricos e Não Paramétricos);
-- Modelos de regressão;
-- Multivariada;
+Repercussão:
 
-## Relatório
+- Mudança do horário do jogo da Globo aumentou o IBOPE ...
 
-- Essencial:
-    - PDF
-    - HTML
-    - Word
-    
-- Devo liberar o código?
+- Quais foram as comparações utilizadas?
 
-## Pós-"Venda"
+  - Compararam somente com a média do IBOPE desse ano;
 
-Deixar claro no orçamento o que está incluso na pós-análise.
+- Possíveis questionamentos:
+  - Aumentou porque foi um clássico?
+  - Os programas que passam nesse horário das demais emissoras são piores do que aqueles que passavam às 16h?
+  - Foi devido ao frio?
+  - Aumento foi real?
+  - 
+  - Quais outras possíveis **fontes de variação**?
 
-- Sugestões do que não cobrar:
-    - Esclarecimento de dúvidas;
-    - Pequenas alterações da análise
+- Conteúdo da Matéria Planejamento de Experimentos I
 
-- Sugestões do que cobrar:
-    - Novas análises;
-    - Customizações que atendam interesse particular;
-    - Alterações que configurem uma nova análise;
-    - Novos dados (isso pode gerar novas conclusões);
-    - Novas variáveis;
-  
 ## Dicas gerais
 
+- Não tenha medo de arriscar (se aventurar em novos desafios);
+- Não tenha medo de perguntar ao professor;
+- Não espere que o professor irá te ensinar tudo, pesquise!
+- Se envolva em projetos que alguém possa ser seu tutor (te ajude a aprender);
+- Aproveite bem o seu tempo na universidade (maior probabilidade de aprender, no mercado você é muito mais cobrado);
+- Aprenda Inglês;
+- Aprenda a programar;
+- Busque novas tecnologias (ferramentas de análise);
+- Estude junto com amigos (não fique 100% do tempo sozinho);
+- Desenvolva a comunicação e a escrita técnica;
+
+## Software R
 - Domínios de pacotes R:
     - Gráficos: `RColorBrewer`, `ggplot2`, `lattice`, `likert`, `wordcloud`;
     - Manipulação de dados: Família `apply`, `dplyr`;
@@ -200,11 +152,6 @@ Deixar claro no orçamento o que está incluso na pós-análise.
     - Formatação: `kable`, `kableExtra`, `htmlTable`, `broom`;
     - Modelagem: `lm()`, `glm()`, `multinom`, `lme4`, `Tweedie`, `mgcv`, `mcglm`, `ordinal`, `hnp`;
     - Importação de base de dados: `openxlsx` (Excel), `data.table` (grandes bases);
-    
-- Atividades na UFPR:
-    - LEA/Empresa Júnior;
-    - Projetos do LEG/PET que envolvam pesquisadores;
-    - Participação de eventos de estatística;
     
 ## Link da apresentação
 
