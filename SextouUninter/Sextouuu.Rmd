@@ -378,7 +378,7 @@ Disciplinas do curso utilizadas: Análise de dados longitudinais, Modelos Linear
 
 + Link da Apresentação:
 
-  + <!-- [https://github.com/guilhermeparreira/apresentacoes/tree/master/AulaInaugural/AulaInaugural.Guilherme.pdf](https://github.com/guilhermeparreira/apresentacoes/tree/master/AulaInaugural/AulaInaugural.Guilherme.pdf); -->
+  + [https://github.com/guilhermeparreira/apresentacoes/blob/master/SextouUninter/Sextouuu.pdf](https://github.com/guilhermeparreira/apresentacoes/blob/master/SextouUninter/Sextouuu.pdf);
 
 
 <!-- ## Referências {.allowframebreaks} -->
